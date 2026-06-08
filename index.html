@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tap Game</title>
+<style>
+body{
+    font-family: Arial, sans-serif;
+    text-align:center;
+    background:#222;
+    color:white;
+    margin-top:50px;
+}
+button{
+    font-size:30px;
+    padding:20px 40px;
+    border:none;
+    border-radius:15px;
+}
+#score{
+    font-size:40px;
+    margin:20px;
+}
+</style>
+</head>
+<body>
+
+<h1>Tap Game</h1>
+<p>Tap the button to earn points!</p>
+
+<div id="score">0</div>
+
+<button onclick="tap()">TAP!</button>
+
+<script>
+let score = localStorage.getItem("score") || 0;
+document.getElementById("score").textContent = score;
+
+function tap() {
+    score++;
+    document.getElementById("score").textContent = score;
+    localStorage.setItem("score", score);
+}
+</script>
+
+</body>
+</html>
